@@ -9,11 +9,11 @@ export const generateColor = (value) => {
   let color;
   if (value < 50) {
     color = 'red';
-  } else if (value >= 50 && value <= 70) {
+  } else if (value >= 50 && value < 70) {
     color = 'orange';
-  } else if (value >= 71 && value <= 80) {
+  } else if (value >= 70 && value < 80) {
     color = 'green';
-  } else if (value >= 81 && value <= 100) {
+  } else if (value >= 80) {
     color = 'blue';
   } else {
     color = 'default';
