@@ -1,7 +1,7 @@
 import { Route, HashRouter, Routes } from 'react-router-dom';
 import './App.scss';
 import Home from './pages/Home/Home';
-import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetail from './pages/ItemDetail/ItemDetail';
 import GamePage from './pages/GamePage/GamePage';
 import Header from './components/Header/Header';
 

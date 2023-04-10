@@ -6,7 +6,8 @@ const GamePage = () => {
   const [nameSelected, setNameSelected] = React.useState();
   const [gameIsSolved, setGameIsSolved] = React.useState(false);
   const [filmList, setFilmList] = React.useState([]);
-  const page = generateRandom(0, 100);
+  const [page, setPage] = React.useState(generateRandom(0, 100));
+
   const [currentFilmTitle, setCurrentFilmTitle] = React.useState();
   const [currentFilmOverview, setCurrentFilmOverview] = React.useState();
   const [options, setOptions] = React.useState([]);
@@ -18,10 +19,18 @@ const GamePage = () => {
         setFilmList(dataParsed.results);
         generateNewGamePlay(dataParsed.results);
       });
-  }, []);
+  }, [page]);
   console.log(page);
   const generateNewGamePlay = (dataParsed) => {
-    const randomIndexes = Array.from({ length: 4 }, () => generateRandom(0, dataParsed.length));
+    const randomIndexes = [];
+
+    while (randomIndexes.length < 4) {
+      const randomIndex = generateRandom(0, dataParsed.length);
+      if (!randomIndexes.includes(randomIndex)) {
+        randomIndexes.push(randomIndex);
+      }
+    }
+
     const currentFilmIndex = randomIndexes[generateRandom(0, 3)];
     const currentItemFromList = dataParsed[currentFilmIndex];
     const newGameOptions = randomIndexes.map((index) => dataParsed[index].title);
@@ -63,7 +72,13 @@ const GamePage = () => {
         ))}
       </div>
       <div className='game-page__solve'>
-        <button className='btn btn--link game-page__solve-btn' onClick={() => generateNewGamePlay(filmList)}>
+        <button
+          className='btn btn--link game-page__solve-btn'
+          onClick={() => {
+            setPage(generateRandom(0, 100));
+            generateNewGamePlay(filmList);
+          }}
+        >
           Recargar Juego
         </button>
         <button className='btn game-page__solve-btn' disabled={gameIsSolved} onClick={() => setGameIsSolved(true)}>

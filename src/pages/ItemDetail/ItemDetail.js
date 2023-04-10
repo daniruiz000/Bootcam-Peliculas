@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
-import RecommdationItem from '../RecommdationItem/RecommdationItem';
-import { convertDate, convertMinutesToHours, obtenerGeneros, roundedToFixed } from '../../utils/utils';
-import CastDetail from '../CastDetail/CastDetail';
-import CrewDetail from '../CrewDetail/CrewDetail';
+import RecommdationItem from '../../components/RecommdationItem/RecommdationItem';
+import { formatDate, formatTime, formatGenres, roundedToFixed } from '../../utils/utils';
+import CastDetail from '../../components/CastDetail/CastDetail';
+import CrewDetail from '../../components/CrewDetail/CrewDetail';
 import './ItemDetail.scss';
 
 const ItemDetail = () => {
@@ -23,7 +23,7 @@ const ItemDetail = () => {
         <img className='item-datail__img' src={`${process.env.REACT_APP_IMG}${itemData?.poster_path}`} />
         <h3 className='item-datail__title'>{itemData?.title || itemData?.name}</h3>
         <p>
-          <span>{convertDate(itemData?.release_date || itemData?.first_air_date)}</span> | {obtenerGeneros(itemData?.genres)} | <span>{convertMinutesToHours(itemData?.runtime || itemData?.episode_run_time)}</span>
+          <span>{formatDate(itemData?.release_date || itemData?.first_air_date)}</span> | {formatGenres(itemData?.genres)} | <span>{formatTime(itemData?.runtime || itemData?.episode_run_time[0])}</span>
         </p>
         <p className='item-datail__vote'>{porcentVote}puntuación del usuario</p>
         <p className='item-datail__subtitle'>{itemData?.tagline}</p>
