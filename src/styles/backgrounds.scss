@@ -1,0 +1,79 @@
+@import "./variables.scss";
+
+.app {
+  .background-default {
+    background-color: $background-generic;
+  }
+
+  .background-bug {
+    background-color: $pokemon-type-color-bug;
+  }
+
+  .background-electric {
+    background-color: $pokemon-type-color-electric;
+  }
+
+  .background-fire {
+    background-color: $pokemon-type-color-fire;
+  }
+
+  .background-grass {
+    background-color: $pokemon-type-color-grass;
+  }
+
+  .background-normal {
+    background-color: $pokemon-type-color-normal;
+  }
+
+  .background-rock {
+    background-color: $pokemon-type-color-rock;
+  }
+
+  .background-dark {
+    background-color: $pokemon-type-color-dark;
+  }
+
+  .background-fairy {
+    background-color: $pokemon-type-color-fairy;
+  }
+
+  .background-flying {
+    background-color: $pokemon-type-color-flying;
+  }
+
+  .background-ground {
+    background-color: $pokemon-type-color-ground;
+  }
+
+  .background-poison {
+    background-color: $pokemon-type-color-poison;
+  }
+
+  .background-steel {
+    background-color: $pokemon-type-color-steel;
+  }
+
+  .background-dragon {
+    background-color: $pokemon-type-color-dragon;
+  }
+
+  .background-fighting {
+    background-color: $pokemon-type-color-fighting;
+  }
+
+  .background-ghost {
+    background-color: $pokemon-type-color-ghost;
+  }
+
+  .background-ice {
+    background-color: $pokemon-type-color-ice;
+  }
+
+  .background-physchic {
+    background-color: $pokemon-type-color-physchic;
+  }
+
+  .background-water {
+    background-color: $pokemon-type-color-water;
+  }
+}

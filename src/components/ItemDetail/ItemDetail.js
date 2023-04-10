@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import RecommdationItem from '../RecommdationItem/RecommdationItem';
-import { roundedToFixed } from '../../utils/utils';
+import { convertDate, convertMinutesToHours, obtenerGeneros, roundedToFixed } from '../../utils/utils';
 import CastDetail from '../CastDetail/CastDetail';
 import CrewDetail from '../CrewDetail/CrewDetail';
+import './ItemDetail.scss';
 
 const ItemDetail = () => {
   const { id } = useParams(':id');
@@ -17,33 +18,35 @@ const ItemDetail = () => {
   const [personsData] = useFetch(API_URL_CAST);
 
   return (
-    <div>
+    <div className='item-datail'>
       <div>
-        <img src={`${process.env.REACT_APP_IMG}${itemData?.poster_path}`} />
-        <h3>{itemData?.title || itemData?.name}</h3>
-        <p>{porcentVote}puntuación del usuario</p>
-        <p>{itemData?.tagline}</p>
+        <img className='item-datail__img' src={`${process.env.REACT_APP_IMG}${itemData?.poster_path}`} />
+        <h3 className='item-datail__title'>{itemData?.title || itemData?.name}</h3>
+        <p>
+          <span>{convertDate(itemData?.release_date || itemData?.first_air_date)}</span> | {obtenerGeneros(itemData?.genres)} | <span>{convertMinutesToHours(itemData?.runtime || itemData?.episode_run_time)}</span>
+        </p>
+        <p className='item-datail__vote'>{porcentVote}puntuación del usuario</p>
+        <p className='item-datail__subtitle'>{itemData?.tagline}</p>
         <p>Vista general</p>
-        <p>{itemData?.overview}</p>
+        <p className='item-datail__overview'>{itemData?.overview}</p>
       </div>
-      <div>
+      <div className='item-datail__crew'>
         {personsData?.crew?.map((person) => (
           <CrewDetail key={person.id} person={person} />
         ))}
       </div>
-      <div>
+      <div className='item-datail__cast'>
         <h3>Reparto Principal</h3>
         {personsData?.cast?.map((character) => (
           <CastDetail key={character.id} character={character} />
         ))}
       </div>
-      <div>
+      <div className='item-datail__results'>
         <h3>Recomendaciones</h3>
         {recommendationsData?.results?.map((element) => (
           <RecommdationItem key={element.id} item={element} />
         ))}
       </div>
-      <p>Item detail de {id}</p>
     </div>
   );
 };

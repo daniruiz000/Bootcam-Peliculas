@@ -5,7 +5,7 @@ const RecommdationItem = ({ item }) => {
   const porcentVote = roundedToFixed(item?.vote_average) * 10 + '%';
   return (
     <Link className='Item' to={`/items/${item?.id}/${type}`}>
-      <img src={`${process.env.REACT_APP_IMG}${item?.poster_path}`} />
+      <img src={`${process.env.REACT_APP_IMG}${item?.backdrop_path}`} />
       <h4>{item?.name || item?.title}</h4>
       <p>{porcentVote}</p>
     </Link>

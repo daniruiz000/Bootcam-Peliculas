@@ -1,0 +1,60 @@
+@import "./variables.scss";
+
+.btn {
+  background-color: $background-generic;
+  color: $font-color-light;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 10px 30px;
+  border-radius: 50px;
+  line-height: 1;
+
+  &:disabled,
+  &[disabled] {
+    opacity: 0.3;
+  }
+
+  &--small {
+    font-size: 12px;
+    padding: 5px 20px;
+  }
+
+  &--big {
+    font-size: 18px;
+    padding: 10px 25px;
+    text-transform: capitalize;
+  }
+
+  &--link {
+    background-color: transparent;
+    text-decoration: underline;
+    color: $font-color-generic;
+  }
+
+  &--option {
+    color: $font-color-generic;
+    background-color: $background-disabled;
+  }
+
+  &--option-selected {
+    color: $font-color-light;
+    font-weight: 600;
+    background-color: $background-selected-option;
+  }
+
+  &--option-correct {
+    background-color: $pokemon-type-color-grass;
+    color: $font-color-light;
+    font-weight: 600;
+  }
+
+  &--option-wrong {
+    background-color: $pokemon-type-color-fighting;
+    color: $font-color-light;
+    font-weight: 600;
+  }
+
+  &--light {
+    background-color: $backgroubd-light;
+  }
+}

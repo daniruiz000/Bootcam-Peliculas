@@ -1,0 +1,27 @@
+.item-datail{
+    width: 800px;
+    &__img{
+        width: 250px;
+    }
+    &__title{
+        font-size: 100px;
+    }
+    &__vote{
+
+    }
+    &__subtitle{
+
+    }
+    &__overview{
+
+    }
+    &__crew{
+        display: flex;
+    }
+    &__cast{
+        display: flex;
+    }
+    &__results{
+
+    }
+}
