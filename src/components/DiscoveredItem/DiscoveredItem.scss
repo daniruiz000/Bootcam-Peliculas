@@ -1,0 +1,50 @@
+@import "../../styles/variables.scss";
+
+.avances-item {
+  padding: 10px;
+  align-items: center;
+
+  &__player {
+    border-radius: 10px;
+    background-color: $background-red;
+    width: 280px;
+    height: 75px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    font-size: 40px;
+    margin: 10px;
+    color: $font-color-light;
+  }
+  &__link-video {
+    font-weight: 300;
+    font-size: 14px;
+    color: $font-color-light;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  &__title {
+    color: $font-color-light;
+    font-weight: 700;
+    margin: 0;
+  }
+  &__text {
+    color: $font-color-light;
+    font-weight: 200;
+    margin: 0;
+  }
+  &__info {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+}

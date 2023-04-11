@@ -1,22 +1,31 @@
-import React from 'react';
+import './WatchFree.scss';
 import useFetch from '../../hooks/useFetch';
 import Item from '../Item/Item';
+import { useContext, useState } from 'react';
+import { LanguageSelector } from '../../App';
 
 const WatchFree = () => {
-  const [optionMedia, setOptionMedia] = React.useState('movie');
-  const API_URL_WATCH_FREE = process.env.REACT_APP_API_URL + '/discover/' + optionMedia + '?sort_by=release_date.desc&language=es-ES&page=1&vote_count.gte=1000&vote_average.gte=5&watch_region=ES&with_watch_monetization_types=free&api_key=' + process.env.REACT_APP_API_KEY;
-  const [watchFreeData] = useFetch(API_URL_WATCH_FREE);
+  const [optionMedia, setOptionMedia] = useState('movie');
+  const { language } = useContext(LanguageSelector);
+  const API_URL_WATCH_FREE = process.env.REACT_APP_API_URL + '/discover/' + optionMedia + '?sort_by=release_date.desc&language=' + language + '&page=1&vote_count.gte=1000&vote_average.gte=5&watch_region=ES&with_watch_monetization_types=free&api_key=' + process.env.REACT_APP_API_KEY;
+  const [freeData] = useFetch(API_URL_WATCH_FREE);
+
   return (
-    <div className='item-list'>
-      <div className='item-list__info'>
-        {' '}
-        <h3>Ver gratis</h3>
-        <button onClick={() => setOptionMedia('tv')}>Televisión</button>
-        <button onClick={() => setOptionMedia('movie')}>Película</button>
+    <div className='popular'>
+      <div className='popular__text'>
+        <h3 className='popular__title'>Ver gratis</h3>
+        <div className='popular__buttons'>
+          <button className='btn popular__btn-time' onClick={() => setOptionMedia('movie')}>
+            Películas
+          </button>
+          <button className='btn popular__btn-time' onClick={() => setOptionMedia('tv')}>
+            Televisión
+          </button>
+        </div>
       </div>
-      <div className='item-list__data'>
-        {watchFreeData?.results?.map((item) => (
-          <Item key={item.id} item={item} />
+      <div className='popular__films'>
+        {freeData?.results?.map((item) => (
+          <Item key={item.id} item={item}></Item>
         ))}
       </div>
     </div>

@@ -5,7 +5,7 @@ import { generateRandom } from '../../utils/utils';
 const GamePage = () => {
   const [nameSelected, setNameSelected] = React.useState();
   const [gameIsSolved, setGameIsSolved] = React.useState(false);
-  const [filmList, setFilmList] = React.useState([]);
+  // const [filmList, setFilmList] = React.useState([]);
   const [page, setPage] = React.useState(generateRandom(0, 100));
 
   const [currentFilmTitle, setCurrentFilmTitle] = React.useState();
@@ -16,11 +16,11 @@ const GamePage = () => {
     fetch(FILM_URL)
       .then((response) => response.json())
       .then((dataParsed) => {
-        setFilmList(dataParsed.results);
+        // setFilmList(dataParsed.results);
         generateNewGamePlay(dataParsed.results);
       });
   }, [page]);
-  console.log(page);
+
   const generateNewGamePlay = (dataParsed) => {
     const randomIndexes = [];
 
@@ -76,7 +76,6 @@ const GamePage = () => {
           className='btn btn--link game-page__solve-btn'
           onClick={() => {
             setPage(generateRandom(0, 100));
-            generateNewGamePlay(filmList);
           }}
         >
           Recargar Juego
