@@ -1,13 +1,14 @@
-@import "../../styles/variables.scss";
-@import "../../styles/media-queries.scss";
+@import "./variables.scss";
+@import "./media-queries.scss";
 
-.popular {
+.section {
   display: flex-start;
   flex-direction: column;
 
   &__text {
     display: flex-start;
     flex-direction: column;
+
     @include for-tablet-portrait-up {
       display: flex;
       flex-direction: row;
@@ -28,9 +29,14 @@
       color: $font-color-alternative;
     }
   }
+  &__films--wrapper {
+    overflow-x: scroll;
+  }
   &__films {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     padding: 10px;
 
     @include for-tablet-portrait-up {
@@ -50,6 +56,7 @@
     color: $font-color-generic;
     border: 1px solid $font-color-generic;
   }
+
   &__show-more {
     display: flex;
     justify-content: center;

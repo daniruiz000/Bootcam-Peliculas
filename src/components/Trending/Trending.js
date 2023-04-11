@@ -2,7 +2,7 @@ import { useState } from 'react';
 import useFetch from '../../hooks/useFetch';
 import Item from '../Item/Item';
 import { usePagination } from '../../hooks/usePaginator';
-import './Trending.scss';
+import '../../styles/section_home.scss';
 import { FormattedMessage } from 'react-intl';
 
 const Trending = () => {
@@ -12,27 +12,29 @@ const Trending = () => {
   const [firstMovies, showMoreMovies, theAreMore] = usePagination(movieData?.results);
 
   return (
-    <div className='trends'>
-      <div className='trends__text'>
-        <h3 className='trends__title'>
+    <div className='section'>
+      <div className='section__text'>
+        <h3 className='section__title'>
           <FormattedMessage id='trending_title' />
         </h3>
-        <div className='trends__buttons'>
-          <button onClick={() => setOptionTime('day')} className='btn trends__btn-time'>
+        <div className='section__buttons'>
+          <button onClick={() => setOptionTime('day')} className='btn section__btn-time'>
             Hoy
           </button>
-          <button onClick={() => setOptionTime('week')} className='btn trends__btn-time'>
+          <button onClick={() => setOptionTime('week')} className='btn section__btn-time'>
             Esta semana
           </button>
         </div>
       </div>
-      <div className='trends__films'>
-        {firstMovies?.map((item) => (
-          <Item key={item.id} item={item}></Item>
-        ))}
+      <div className='section__films--wrapper'>
+        <div className='section__films'>
+          {firstMovies?.map((item) => (
+            <Item key={item.id} item={item}></Item>
+          ))}
+        </div>
       </div>
       {theAreMore && (
-        <button onClick={() => showMoreMovies()} className='btn trends__show-more'>
+        <button onClick={() => showMoreMovies()} className='btn section__show-more'>
           + MORE
         </button>
       )}

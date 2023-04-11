@@ -1,12 +1,9 @@
 import './DiscoveredItem.scss';
 import useFetch from '../../hooks/useFetch';
 import { ImPlay3 } from 'react-icons/im';
-import { useContext } from 'react';
-import { LanguageSelector } from '../../App';
 
 const DiscoveredItem = ({ item }) => {
-  const { language } = useContext(LanguageSelector);
-  const [urlItemVideo] = useFetch(process.env.REACT_APP_API_URL + '/movie/' + item?.id + '/videos/?language=' + language + '&api_key=' + process.env.REACT_APP_API_KEY);
+  const [urlItemVideo] = useFetch(process.env.REACT_APP_API_URL + '/movie/' + item?.id + '/videos?api_key=' + process.env.REACT_APP_API_KEY);
   const urlOficialTrailerItem = urlItemVideo?.results?.find((element) => element.name?.includes('Trailer') && element.site === 'YouTube' && element.key);
 
   return (

@@ -1,4 +1,4 @@
-import './Popular.scss';
+import '../../styles/section_home.scss';
 import useFetch from '../../hooks/useFetch';
 import { useState } from 'react';
 import Item from '../Item/Item';
@@ -11,25 +11,27 @@ const Popular = () => {
   const [firstItems, showMoreItems, theAreMore] = usePagination(popularData?.results);
 
   return (
-    <div className='popular'>
-      <div className='popular__text'>
-        <h3 className='popular__title'>Lo más popular</h3>
-        <div className='popular__buttons'>
-          <button className='btn popular__btn-time' onClick={() => setOptionMedia('movie')}>
+    <div className='section'>
+      <div className='section__text'>
+        <h3 className='section__title'>Lo más Popular</h3>
+        <div className='section__buttons'>
+          <button className='btn section__btn-time' onClick={() => setOptionMedia('movie')}>
             Películas
           </button>
-          <button className='btn popular__btn-time' onClick={() => setOptionMedia('tv')}>
+          <button className='btn section__btn-time' onClick={() => setOptionMedia('tv')}>
             Televisión
           </button>
         </div>
       </div>
-      <div className='popular__films'>
-        {firstItems?.map((item) => (
-          <Item key={item.id} item={item}></Item>
-        ))}
+      <div className='trends__films--wrapper'>
+        <div className='section__films'>
+          {firstItems?.map((item) => (
+            <Item key={item.id} item={item}></Item>
+          ))}
+        </div>
       </div>
       {theAreMore && (
-        <button onClick={() => showMoreItems()} className='btn popular__show-more'>
+        <button onClick={() => showMoreItems()} className='btn section__show-more'>
           + MORE
         </button>
       )}
