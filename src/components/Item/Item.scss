@@ -1,11 +1,19 @@
 @import "../../styles/variables.scss";
-
+@import "../../styles/media-queries.scss";
 .item {
   position: relative;
   width: 130px;
-  margin: 10px;
+  margin: 10px 10px;
   text-decoration: none;
   color: $font-color-alternative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  
+  @include for-tablet-portrait-up {
+    width: 150px;
+  }
   &__img {
     
     height: 195px;
@@ -17,7 +25,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin: 10px 0px;
+    margin: 25px 0px;
+    padding: 0 20px;
   }
   &__title {
 
@@ -34,8 +43,8 @@
   }
   &__exterior-circle{
     position: absolute;
-    top: 168px;
-    left: 5px;
+    top: 174px;
+    left: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
