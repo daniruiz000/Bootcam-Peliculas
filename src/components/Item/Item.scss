@@ -1,36 +1,82 @@
+@import "../../styles/variables.scss";
+
 .item {
-    padding: 10px;
-    min-width: 150px;
-    width: 150px;
-    margin: 10px;
-    &__img {
-      height: 225px;
-      width: 150px;
-      border-radius: 10px;
-    }
-  
-    &__title {
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 2px;
-      max-width: 100%;
-    }
-    &__date {
-      font-weight: 300;
-      font-size: 14px;
-      margin-top: 0px;
-      max-width: 100%;
-    }
+  position: relative;
+  width: 130px;
+  margin: 10px;
+  text-decoration: none;
+  color: $font-color-alternative;
+  &__img {
+    
+    height: 195px;
+    width: 130px;
+    border-radius: 10px;
   }
+  &__data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px 0px;
+  }
+  &__title {
+
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 2px;
+    max-width: 100%;
+  }
+  &__date {
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 0px;
+    max-width: 100%;
+  }
+  &__exterior-circle{
+    position: absolute;
+    top: 168px;
+    left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #052641;
+  
+  }
+  &__interior-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50px;
+    background-color:  #052641;
+  
+  }
+  &__vote{
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center
+  }
+  &__span{
+    font-size: 8px;
+    font-weight: 300;
+  }
+}
+
+
 .red{
-    color: red;
+    color: rgb(240, 175, 175);
 }
 .green{
-    color: green;
+    color: rgb(163, 227, 163);
 }
 .blue{
-    color: blue;
+    color:#6EFAD7;
 }
 .orange{
-    color: orange
+    color: #F4F954
 }

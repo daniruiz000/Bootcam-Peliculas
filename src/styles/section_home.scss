@@ -2,9 +2,9 @@
 @import "./media-queries.scss";
 
 .section {
-  display: flex-start;
+  display: flex;
   flex-direction: column;
-
+  padding-bottom: 20px;
   &__text {
     display: flex-start;
     flex-direction: column;
@@ -35,14 +35,14 @@
   &__films {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
     padding: 10px;
+    justify-content: center;
 
     @include for-tablet-portrait-up {
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
+      justify-content: normal;
       padding: 10px;
     }
   }
@@ -61,6 +61,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
+    margin: 10px auto;
+    // @include for-tablet-portrait-up {
+    //   display: none;
+    // }
   }
 }

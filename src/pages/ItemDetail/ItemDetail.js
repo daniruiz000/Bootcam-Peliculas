@@ -9,11 +9,14 @@ import './ItemDetail.scss';
 const ItemDetail = () => {
   const { id } = useParams(':id');
   const { type } = useParams(':type');
+
   const API_URL_DETAIL = process.env.REACT_APP_API_URL + '/' + type + '/' + id + '?api_key=' + process.env.REACT_APP_API_KEY;
   const [itemData] = useFetch(API_URL_DETAIL);
+  const porcentVote = roundedToFixed(itemData?.vote_average) * 10 + '%';
+
   const API_URL_RECOMMENDATIONS = process.env.REACT_APP_API_URL + '/' + type + '/' + id + '/recommendations' + '?api_key=' + process.env.REACT_APP_API_KEY;
   const [recommendationsData] = useFetch(API_URL_RECOMMENDATIONS);
-  const porcentVote = roundedToFixed(itemData?.vote_average) * 10 + '%';
+
   const API_URL_CAST = process.env.REACT_APP_API_URL + '/' + type + '/' + id + '/credits' + '?api_key=' + process.env.REACT_APP_API_KEY;
   const [personsData] = useFetch(API_URL_CAST);
 

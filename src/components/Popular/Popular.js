@@ -3,7 +3,7 @@ import useFetch from '../../hooks/useFetch';
 import { useState } from 'react';
 import Item from '../Item/Item';
 import { usePagination } from '../../hooks/usePaginator';
-
+import { FormattedMessage } from 'react-intl';
 const Popular = () => {
   const [optionMedia, setOptionMedia] = useState('movie');
   const API_URL_POPULAR = process.env.REACT_APP_API_URL + '/' + optionMedia + '/popular/' + '?' + `api_key=${process.env.REACT_APP_API_KEY}`;
@@ -13,17 +13,20 @@ const Popular = () => {
   return (
     <div className='section'>
       <div className='section__text'>
-        <h3 className='section__title'>Lo más Popular</h3>
+        <h3 className='section__title'>
+          {' '}
+          <FormattedMessage id='most_popular' />
+        </h3>
         <div className='section__buttons'>
           <button className='btn section__btn-time' onClick={() => setOptionMedia('movie')}>
-            Películas
+            <FormattedMessage id='films' />
           </button>
           <button className='btn section__btn-time' onClick={() => setOptionMedia('tv')}>
-            Televisión
+            <FormattedMessage id='television' />
           </button>
         </div>
       </div>
-      <div className='trends__films--wrapper'>
+      <div className='section__films--wrapper'>
         <div className='section__films'>
           {firstItems?.map((item) => (
             <Item key={item.id} item={item}></Item>
@@ -32,7 +35,7 @@ const Popular = () => {
       </div>
       {theAreMore && (
         <button onClick={() => showMoreItems()} className='btn section__show-more'>
-          + MORE
+          <FormattedMessage id='more_button' />
         </button>
       )}
     </div>

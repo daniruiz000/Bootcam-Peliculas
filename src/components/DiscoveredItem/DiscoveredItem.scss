@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/media-queries.scss";
 
 .avances-item {
   padding: 10px;
@@ -14,6 +15,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    
+    @include for-tablet-portrait-up {
+      width: 300px;
+    }
   }
 
   &__icon {

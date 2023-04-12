@@ -19,10 +19,10 @@ const Trending = () => {
         </h3>
         <div className='section__buttons'>
           <button onClick={() => setOptionTime('day')} className='btn section__btn-time'>
-            Hoy
+            <FormattedMessage id='day_button' />
           </button>
           <button onClick={() => setOptionTime('week')} className='btn section__btn-time'>
-            Esta semana
+            <FormattedMessage id='week_button' />
           </button>
         </div>
       </div>
@@ -35,7 +35,7 @@ const Trending = () => {
       </div>
       {theAreMore && (
         <button onClick={() => showMoreMovies()} className='btn section__show-more'>
-          + MORE
+          <FormattedMessage id='more_button' />
         </button>
       )}
     </div>

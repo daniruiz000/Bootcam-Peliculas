@@ -34,20 +34,29 @@
   }
   &__lang {
     padding: 5px;
+    display: flex;
+ 
+
   }
 
   &__lang-btn {
     background: none;
     color: $font-color-light;
+    padding: 3px 12px;
     border: none;
     font-weight: 700;
+    font-size: 14px;
     cursor: pointer;
+    @include for-tablet-portrait-up {
+      font-size: 18px;
+    }
   }
   &__lang-btn:hover {
-    background: $font-color-light;
-    color: $font-color-generic;
+    background: #ffff;
+    color: #052641;
     border: none;
     font-weight: 700;
+    border-radius: 50px;
   }
   &__background {
     position: relative;

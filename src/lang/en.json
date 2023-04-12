@@ -1,3 +1,19 @@
 {
-  "trending_title": "Trending:"
+  "trending_title": "Trending:",
+  "day_button": "Today",
+  "week_button": "This week",
+  "more_button": "+MORE",
+  "last_advances": "Last advances",
+  "watch_in_youtube": "Watch in Youtube",
+  "oficial_trailer": "Oficial Trailer",
+  "most_popular":"Most popular",
+  "films": "Films",
+  "television": "Television",
+  "watch_free": "Watch free",
+  "game": "Game",
+  "unete_text":"Get access to maintain your own custom personal lists, track what you've seen and search and filter for what to watch next—regardless if it's in theatres, on TV or available on popular streaming services like Netflix, Amazon Prime Video, Disney Plus, fuboTV y Apple TV Plus.",
+  "unete_title":"Join up today.",
+  "welcome_text":"Millions of movies, TV shows, and people to discover. Explore now.",
+  "welcome_title":"Welcome."
+  
   }

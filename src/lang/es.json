@@ -1,5 +1,19 @@
 {
-   
-    "trending_title": "Tendencias:"
-    
+  "trending_title": "Tendencias",
+    "day_button": "Hoy",
+    "week_button": "Esta semana:",
+    "more_button": "+MÁS",
+    "last_advances": "Últimos avances",
+    "watch_in_youtube": "Ver en Youtube",
+    "oficial_trailer": "Trailer Oficial",
+    "most_popular":"Lo más popular",
+    "films": "Películas",
+    "television": "Televisión",
+    "watch_free": "Ver gratis",
+    "game": "Juego",
+    "unete_text":"Obtén acceso para mantener tus propias listas personalizadas, rastrear lo que has visto y buscar y filtrar lo que quieres ver a continuación, independientemente de si está en los cines, en la televisión o disponible en servicios populares de streaming como Netflix, Amazon Prime Video, Disney Plus, fuboTV y Apple TV Plus.",
+    "unete_title":"Unete hoy.",
+    "welcome_text":"Millones de películas, programas de televisión y personas por descubrir. Explora ahora.",
+    "welcome_title":"Bienvenidos."
+
   }
