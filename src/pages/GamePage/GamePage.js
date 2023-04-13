@@ -65,13 +65,8 @@ const GamePage = () => {
   return (
     <div className='game-page'>
       <div className='game-page__detail'>
-        {!gameIsSolved ? (
-          <div className='game-page__img-notsolved'>
-            <ImFilm className='game-page__icon' />
-          </div>
-        ) : (
-          <img className='game-page__img-solved' src={`${process.env.REACT_APP_IMG}${currentFilm?.poster_path}`} />
-        )}
+        {!gameIsSolved && <ImFilm className='game-page__icon' />}
+        <img className={!gameIsSolved ? 'game-page__img--hide' : 'game-page__img'} src={`${process.env.REACT_APP_IMG}${currentFilm?.poster_path}`} />
         <p>{gameIsSolved ? currentFilm?.title : '???'}</p>
         <p>
           <span>{formatDateWithBarrs(currentFilm?.release_date)}</span> | <span>{formatGenres(currentFilm?.genres)}</span> | <span>{formatTime(currentFilm?.runtime)}</span>
