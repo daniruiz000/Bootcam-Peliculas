@@ -14,6 +14,11 @@
     "unete_text":"Obtén acceso para mantener tus propias listas personalizadas, rastrear lo que has visto y buscar y filtrar lo que quieres ver a continuación, independientemente de si está en los cines, en la televisión o disponible en servicios populares de streaming como Netflix, Amazon Prime Video, Disney Plus, fuboTV y Apple TV Plus.",
     "unete_title":"Unete hoy.",
     "welcome_text":"Millones de películas, programas de televisión y personas por descubrir. Explora ahora.",
-    "welcome_title":"Bienvenidos."
-
+    "welcome_title":"Bienvenidos.",
+    "options":"Opciones",
+    "sinopsis":"Sinopsis",
+    "restart":"Reiniciar",
+    "solve":"Resolver",
+    "score":"Puntuación de usuario",
+    "general-view":"Vista general"
   }

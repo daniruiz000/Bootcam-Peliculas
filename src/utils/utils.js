@@ -45,9 +45,57 @@ export const formatDate = (date) => {
   }
 };
 
+export const formatDateWithBarrs = (date) => {
+  if (date !== undefined) {
+    const partes = date.split('-');
+    const dia = partes[2];
+    const mes = partes[1];
+    const anio = partes[0];
+    return `${dia}/${mes}/${anio}`;
+  }
+};
+
+export const formatYear = (date) => {
+  if (date !== undefined) {
+    const year = date.slice(0, 4);
+    return `(${year})`;
+  }
+};
+
 export const formatGenres = (genres) => {
   if (genres !== undefined) {
     genres = genres.map((genre) => genre.name);
     return <span>{genres.toString().replaceAll(',', ', ')}</span>;
+  }
+};
+
+export const getProductionCountriesName = (movie) => {
+  if (movie !== undefined) {
+    const productionCountries = movie.production_countries;
+    const countryNames = productionCountries.map((country) => country.name);
+    return countryNames;
+  }
+};
+
+export const generateRandomIndex = (data) => {
+  const randomIndexes = [];
+
+  while (randomIndexes.length < 4) {
+    const randomIndex = generateRandom(0, data.length);
+    if (!randomIndexes.includes(randomIndex)) {
+      randomIndexes.push(randomIndex);
+    }
+  }
+  return randomIndexes;
+};
+
+export const getMovieDetailsFromId = (id) => {
+  if (id !== undefined) {
+    let filmDetail;
+    const API_URL_DETAIL = process.env.REACT_APP_API_URL + '/movie/' + id + '?api_key=' + process.env.REACT_APP_API_KEY;
+    fetch(API_URL_DETAIL)
+      .then((response) => response.json())
+      .then((data) => (filmDetail = data));
+    return filmDetail;
   }
 };

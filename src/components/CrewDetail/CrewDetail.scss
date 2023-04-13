@@ -1,0 +1,14 @@
+.crew-detail{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    margin: 10px 0;
+    &__name{
+        font-size: 12px;
+        font-weight: bold;
+    }
+    &__job{
+        font-size: 12px;
+        font-weight: 300;
+    }
+}

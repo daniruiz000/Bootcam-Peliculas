@@ -1,0 +1,26 @@
+.recommendation-item a{
+    text-decoration: none;
+    outline: none;
+    color: #2D2D2D;
+    width: 100%;
+    &__img{
+        width: 287px;
+        border-radius: 10px;
+    }
+    &__data{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__title{
+        font-size: 16px;
+        font-weight: 200;
+        color: #2D2D2D;
+    }
+    &__vote{
+        font-size: 16px;
+        font-weight: 200;
+        color: #2D2D2D;
+    }
+}

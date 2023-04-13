@@ -1,9 +1,11 @@
+import './CastDetail.scss';
+
 const CastDetail = ({ character }) => {
   return (
-    <div>
-      <img src={`${process.env.REACT_APP_IMG}${character?.profile_path}`} />
-      <p>{character?.name}</p>
-      <p>{character?.character}</p>
+    <div className='cast-detail'>
+      <img className='cast-detail__img' src={`${process.env.REACT_APP_IMG}${character?.profile_path}`} />
+      <p className='cast-detail__name'>{character?.name}</p>
+      <p className='cast-detail__character'>{character?.character}</p>
     </div>
   );
 };

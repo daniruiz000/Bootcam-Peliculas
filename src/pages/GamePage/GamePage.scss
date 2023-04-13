@@ -1,4 +1,8 @@
 .game-page {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   &__content {
     max-width: 1250px;
     margin: 0 auto;
@@ -8,7 +12,12 @@
     z-index: 10;
   }
 
-  &__detail {}
+  &__detail {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__options {
     display: flex;
@@ -29,5 +38,24 @@
 
   &__solve-btn {
     margin: 0 10px;
+  }
+  &__img-solved{
+    width: 265px;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+  &__img-notsolved{
+    width: 265px;
+    height: 398px;
+    background-color: #C2D0DB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    border-radius: 10px;
+  }
+  &__icon{
+    font-size: 100px;
+
   }
 }

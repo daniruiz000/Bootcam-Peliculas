@@ -8,6 +8,7 @@ import { IntlProvider } from 'react-intl';
 import { createContext, useEffect, useState } from 'react';
 import English from './lang/en.json';
 import Spanish from './lang/es.json';
+import Footer from './components/Footer/Footer';
 
 export const LanguageSelector = createContext();
 
@@ -34,6 +35,7 @@ function App() {
             <Route path='/items/:id/:type' element={<ItemDetail />}></Route>
             <Route path='/quiz' element={<GamePage />}></Route>
           </Routes>
+          <Footer />
         </HashRouter>
       </IntlProvider>
     </LanguageSelector.Provider>
