@@ -3,9 +3,12 @@ import DiscoveredItem from '../DiscoveredItem/DiscoveredItem';
 import './Discover.scss';
 import { FormattedMessage } from 'react-intl';
 import { usePagination } from '../../hooks/usePaginator';
+import { useContext } from 'react';
+import { LanguageSelector } from '../../App';
 
 const Discover = () => {
-  const API_URL = process.env.REACT_APP_API_URL + '/discover/movie?page=1&release_date.desc&vote_average.gte=6.5&api_key=' + process.env.REACT_APP_API_KEY;
+  const { language } = useContext(LanguageSelector);
+  const API_URL = process.env.REACT_APP_API_URL + '/discover/movie?page=1&language=' + language + '&release_date.desc&vote_average.gte=6.5&api_key=' + process.env.REACT_APP_API_KEY;
   const [discoverData] = useFetch(API_URL);
   const [firstItems, showMoreItems, theAreMore] = usePagination(discoverData?.results);
   return (

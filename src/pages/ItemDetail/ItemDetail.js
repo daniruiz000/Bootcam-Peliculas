@@ -21,7 +21,7 @@ const ItemDetail = () => {
   const porcentVote = roundedToFixed(itemData?.vote_average) * 10;
   const colorVote = generateColor(roundedToFixed(itemData?.vote_average) * 10);
 
-  const API_URL_RECOMMENDATIONS = process.env.REACT_APP_API_URL + '/' + type + '/' + id + '/recommendations' + '?api_key=' + process.env.REACT_APP_API_KEY;
+  const API_URL_RECOMMENDATIONS = process.env.REACT_APP_API_URL + '/' + type + '/' + id + '/recommendations' + '?language=' + language + '&api_key=' + process.env.REACT_APP_API_KEY;
   const [recommendationsData] = useFetch(API_URL_RECOMMENDATIONS);
   const [firstItemsRecommendations, showMoreItemsRecommendations, theAreMoreRecommendations] = usePagination(recommendationsData?.results);
 

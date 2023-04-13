@@ -1,12 +1,11 @@
-@import "../../styles/variables.scss";
 @import "../../styles/media-queries.scss";
 
 .discover {
-  background-color: $background-generic;
+  background-color: #052641;
   margin: 10px 0;
   padding-bottom: 20px;
   &__title {
-    color: $font-color-light;
+    color: #ffff;
     padding: 15px;
     margin: 0px;
     font-weight: 700;

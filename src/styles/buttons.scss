@@ -1,8 +1,7 @@
-@import "./variables.scss";
 
 .btn {
-  background-color: $background-generic;
-  color: $font-color-light;
+  background-color: #052641;
+  color: #ffff;
   font-size: 14px;
   font-weight: 300;
   padding: 10px 20px;
@@ -17,33 +16,33 @@
   &--link {
     background-color: transparent;
     text-decoration: underline;
-    color: $font-color-generic;
+    color: #052641;
   }
 
   &--option {
-    color: $font-color-generic;
-    background-color: $background-disabled;
+    color: #052641;
+    background-color: #E7E7E7;
   }
 
   &--option-selected {
-    color: $font-color-light;
+    color: #ffff;
     font-weight: 600;
-    background-color: $background-selected-option;
+    background-color: #F4BC4F;
   }
 
   &--option-correct {
-    background-color: $pokemon-type-color-grass;
-    color: $font-color-light;
+    background-color: #78C84F;
+    color: #ffff;
     font-weight: 600;
   }
 
   &--option-wrong {
-    background-color: $pokemon-type-color-fighting;
-    color: $font-color-light;
+    background-color: #C03028;
+    color: #ffff;
     font-weight: 600;
   }
 
   &--light {
-    background-color: $backgroubd-light;
+    background-color: #C5C2C2;
   }
 }

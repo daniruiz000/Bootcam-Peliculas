@@ -1,12 +1,16 @@
 import '../../styles/section_home.scss';
 import useFetch from '../../hooks/useFetch';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Item from '../Item/Item';
 import { usePagination } from '../../hooks/usePaginator';
 import { FormattedMessage } from 'react-intl';
+
+import { LanguageSelector } from '../../App';
+
 const Popular = () => {
+  const { language } = useContext(LanguageSelector);
   const [optionMedia, setOptionMedia] = useState('movie');
-  const API_URL_POPULAR = process.env.REACT_APP_API_URL + '/' + optionMedia + '/popular/' + '?' + `api_key=${process.env.REACT_APP_API_KEY}`;
+  const API_URL_POPULAR = process.env.REACT_APP_API_URL + '/' + optionMedia + '/popular?language=' + language + `&api_key=${process.env.REACT_APP_API_KEY}`;
   const [popularData] = useFetch(API_URL_POPULAR);
   const [firstItems, showMoreItems, theAreMore] = usePagination(popularData?.results);
 

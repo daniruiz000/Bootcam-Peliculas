@@ -1,4 +1,3 @@
-@import "../../styles/variables.scss";
 @import "../../styles/media-queries.scss";
 
 .header {
@@ -9,7 +8,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    background-color: $background-generic;
+    background-color: #052641;
   }
   &__links-pages {
     display: flex;
@@ -24,7 +23,7 @@
   &__links-link {
     padding-right: 10px;
     text-decoration: none;
-    color: $font-color-light;
+    color: #ffff;
     font-weight: 700;
     font-family: "Poppins";
     cursor: pointer;
@@ -42,7 +41,7 @@
 
   &__lang-btn {
     background: none;
-    color: $font-color-light;
+    color: #ffff;
     padding: 3px 12px;
     border: none;
     font-weight: 700;
@@ -95,7 +94,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    color: $font-color-light;
+    color: #ffff;
 
     @include for-tablet-portrait-up {
       left: 37px;
@@ -111,7 +110,7 @@
     font-weight: 700;
     font-size: 20px;
     padding-right: 10px;
-    color: $font-color-light;
+    color: #ffff;
 
     @include for-tablet-portrait-up {
       left: 37px;

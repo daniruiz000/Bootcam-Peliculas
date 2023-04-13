@@ -1,4 +1,3 @@
-@import "../../styles/variables.scss";
 @import "../../styles/media-queries.scss";
 
 .avances-item {
@@ -7,7 +6,7 @@
 
   &__player {
     border-radius: 10px;
-    background-color: $background-red;
+    background-color: #dd5757;
     width: 280px;
     height: 75px;
     margin: 0 auto;
@@ -24,24 +23,24 @@
   &__icon {
     font-size: 40px;
     margin: 10px;
-    color: $font-color-light;
+    color:  #ffff;
   }
   &__link-video {
     font-weight: 300;
     font-size: 14px;
-    color: $font-color-light;
+    color:  #ffff;
     text-decoration: none;
     font-weight: 700;
     font-size: 16px;
     cursor: pointer;
   }
   &__title {
-    color: $font-color-light;
+    color:  #ffff;
     font-weight: 700;
     margin: 0;
   }
   &__text {
-    color: $font-color-light;
+    color:  #ffff;
     font-weight: 200;
     margin: 0;
   }

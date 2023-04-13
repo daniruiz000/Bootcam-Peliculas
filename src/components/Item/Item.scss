@@ -1,11 +1,11 @@
-@import "../../styles/variables.scss";
 @import "../../styles/media-queries.scss";
+
 .item {
   position: relative;
   width: 130px;
   margin: 10px 10px;
   text-decoration: none;
-  color: $font-color-alternative;
+  color: #2D2D2D;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -76,16 +76,3 @@
   }
 }
 
-
-.red{
-    color: rgb(240, 175, 175);
-}
-.green{
-    color: rgb(163, 227, 163);
-}
-.blue{
-    color:#6EFAD7;
-}
-.orange{
-    color: #F4F954
-}
