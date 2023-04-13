@@ -1,6 +1,6 @@
 import React from 'react';
 import './GamePage.scss';
-import { generateRandom, generateRandomIndex, formatDateWithBarrs, formatGenres, formatTime } from '../../utils/utils';
+import { generateRandom, generateRandomIndex, formatDateWithBarrs, formatGenres, formatTime, getProductionCountriesName } from '../../utils/utils';
 import { ImFilm } from 'react-icons/im';
 import { LanguageSelector } from '../../App';
 import { FormattedMessage } from 'react-intl';
@@ -69,7 +69,7 @@ const GamePage = () => {
         <img className={!gameIsSolved ? 'game-page__img--hide' : 'game-page__img'} src={`${process.env.REACT_APP_IMG}${currentFilm?.poster_path}`} />
         <p>{gameIsSolved ? currentFilm?.title : '???'}</p>
         <p>
-          <span>{formatDateWithBarrs(currentFilm?.release_date)}</span> | <span>{formatGenres(currentFilm?.genres)}</span> | <span>{formatTime(currentFilm?.runtime)}</span>
+          <span>{formatDateWithBarrs(currentFilm?.release_date)}</span> <span>{getProductionCountriesName(currentFilm?.production_countries)}</span> | <span>{formatGenres(currentFilm?.genres)}</span> | <span>{formatTime(currentFilm?.runtime)}</span>
         </p>
         <p>{!gameIsSolved && <FormattedMessage id='sinopsis' />}</p>
         <p>{!gameIsSolved && currentFilm?.overview}</p>

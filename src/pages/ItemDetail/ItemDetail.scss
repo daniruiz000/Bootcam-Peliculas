@@ -79,7 +79,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
-        align-items: baseline;
+        align-items: flex-start;
         
     }
     &__results{
@@ -163,4 +163,9 @@ margin-top: 10px;
 .link p{
     font-size: 16px;
 
+}
+
+.item-detail h2{
+    font-size: 15px;
+    text-align: center;
 }

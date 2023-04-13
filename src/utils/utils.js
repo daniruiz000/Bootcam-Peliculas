@@ -69,11 +69,12 @@ export const formatGenres = (genres) => {
   }
 };
 
-export const getProductionCountriesName = (movie) => {
-  if (movie !== undefined) {
-    const productionCountries = movie.production_countries;
-    const countryNames = productionCountries.map((country) => country.name);
-    return countryNames;
+export const getProductionCountriesName = (countries) => {
+  if (countries !== undefined) {
+    const countryNames = countries.map((country) => country.iso_3166_1);
+    const countryNameFormat = ` (${countryNames.join(', ')}) `;
+
+    return countryNameFormat;
   }
 };
 

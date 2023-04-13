@@ -20,6 +20,8 @@
   "restart":"Restart",
   "solve":"Solve",
   "score":"User score",
-  "general-view":"General view"
-
+  "general-view":"General view",
+  "principal-cast":"Principal Cast",
+  "recommendations":"Recommendations",
+  "recommendations-not":"There are no recommendations for this film"
   }
