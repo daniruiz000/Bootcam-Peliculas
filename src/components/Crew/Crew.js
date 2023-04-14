@@ -3,10 +3,10 @@ import React from 'react';
 import CrewDetail from '../../components/CrewDetail/CrewDetail';
 
 const Crew = ({ personsData }) => {
-  const importantJobs = ['Editor', 'Director', 'Screenplay', 'Story', 'Screenplay', 'Characters', 'Producer'];
+  const importantJobs = ['Editor', 'Executive Producer', 'Writer', 'Sound', 'Costume & Make-Up', 'Director', 'Screenplay', 'Story', 'Novel', 'Characters'];
   const crew = personsData?.crew?.map((element) => element);
   const crewFilter = crew?.filter((person) => importantJobs.includes(person.job));
-
+  console.log(crew, crewFilter);
   return (
     <div className='item-detail__crew-container'>
       {crewFilter?.map((person) => (
