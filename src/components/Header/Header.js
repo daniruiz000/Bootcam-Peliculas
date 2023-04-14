@@ -7,7 +7,6 @@ import { FormattedMessage } from 'react-intl';
 
 const Header = () => {
   const { setLanguage } = useContext(LanguageSelector);
-
   return (
     <div className='header'>
       <div className='header__links'>
