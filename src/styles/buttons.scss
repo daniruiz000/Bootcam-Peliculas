@@ -22,9 +22,7 @@
   &--option {
     color: #052641;
     background-color: #ffff;
-    @include for-tablet-portrait-up {
-      width: 250px;
-    }
+    width: 250px;
   }
 
   &--option-selected {

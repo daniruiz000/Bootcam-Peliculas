@@ -6,7 +6,7 @@ const RecommdationItem = ({ item }) => {
   const porcentVote = roundedToFixed(item?.vote_average) * 10 + '%';
 
   return (
-    <NavLink className='recommendation-item link' to={`/items/${item?.id}/${type}`}>
+    <NavLink onClick={() => window.scroll(0, 0)} className='recommendation-item link' to={`/items/${item?.id}/${type}`}>
       <img className='recommendation-item__img' src={`${process.env.REACT_APP_IMG_RECOMENDATION}${item?.backdrop_path}`} />
       <div className='recommendation-item__data link__container'>
         <h4 className='recommendation-item__title'>{item?.name || item?.title}</h4>

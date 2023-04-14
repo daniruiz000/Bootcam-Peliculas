@@ -18,7 +18,6 @@ const Popular = () => {
     <div className='section'>
       <div className='section__text'>
         <h3 className='section__title'>
-          {' '}
           <FormattedMessage id='most_popular' />
         </h3>
         <div className='section__buttons'>
