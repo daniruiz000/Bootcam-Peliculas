@@ -12,16 +12,22 @@ const Cast = ({ personsData }) => {
       <h3 className='item-detail__cast-title'>
         <FormattedMessage id='principal-cast' />
       </h3>
-      <div className='item-detail__cast-container'>
-        {firstItemsCast?.map((character) => (
-          <CastDetail key={character.id} character={character} />
-        ))}
+
+      <div className='item-detail__cast-wrap'>
+        <div className='item-detail__cast-container'>
+          <div className='item-detail__cast-items'>
+            {firstItemsCast?.map((character) => (
+              <CastDetail key={character.id} character={character} />
+            ))}
+          </div>
+
+          {theAreMoreCast && (
+            <button onClick={() => showMoreItemsCast()} className='btn section__show-more'>
+              <FormattedMessage id='more_button' />
+            </button>
+          )}
+        </div>
       </div>
-      {theAreMoreCast && (
-        <button onClick={() => showMoreItemsCast()} className='btn section__show-more'>
-          <FormattedMessage id='more_button' />
-        </button>
-      )}
     </div>
   );
 };

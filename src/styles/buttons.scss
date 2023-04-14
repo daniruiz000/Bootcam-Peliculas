@@ -1,4 +1,4 @@
-
+@import "./media-queries.scss";
 .btn {
   background-color: #052641;
   color: #ffff;
@@ -21,25 +21,31 @@
 
   &--option {
     color: #052641;
-    background-color: #E7E7E7;
+    background-color: #ffff;
+    @include for-tablet-portrait-up {
+      width: 250px;
+    }
   }
 
   &--option-selected {
     color: #ffff;
     font-weight: 600;
-    background-color: #F4BC4F;
+    background-color: #EC9F57;
+    border: none;
   }
 
   &--option-correct {
     background-color: #78C84F;
     color: #ffff;
     font-weight: 600;
+    border: none;
   }
 
   &--option-wrong {
     background-color: #C03028;
     color: #ffff;
     font-weight: 600;
+    border: none;
   }
 
   &--light {

@@ -1,5 +1,5 @@
+@import "../../styles/media-queries.scss";
 .game-page {
- 
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -23,47 +23,75 @@
     width: 100%;
     position: relative;
     top: -3px;
+    @include for-tablet-portrait-up {
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      padding: 30px 0;
+    }
   }
   &__data{
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin: 20px auto;
-    padding: 10px;
+    padding: 30px;
+    @include for-tablet-portrait-up {
+      width: 50%;
+    }
   }
   &__title{
     font-size: 20px;
     font-weight: bold;
+    @include for-tablet-portrait-up {
+      font-size: 28px;
+    }
   }
   &__subtitle{
     font-size: 12px;
     font-weight: 200;
+    @include for-tablet-portrait-up {
+      font-size: 14px;
+    }
   }
   &__sinopsis-title{
+    margin: 20px 0 10px 0;
     font-size: 16px;
     font-weight: bold;
+    @include for-tablet-portrait-up {
+      font-size: 18px;
+    }
   }
   &__sinopsis{
     font-size: 12px;
     font-weight: 200;
+    @include for-tablet-portrait-up {
+      font-size: 14px;
+    }
   }
   &__options {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
+    @include for-tablet-portrait-up {
+      width: 560px;
+      flex-flow: row wrap;
+      align-items: stretch;
+      padding: 10px 0;
+      justify-content: space-between;
+    }
   }
 
   &__button {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-transform: capitalize;
   }
 
   &__solve {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
   }
 
   &__solve-btn {
@@ -84,7 +112,10 @@
     position: relative;
     top: 258px;
     left: 1px;
-    font-size: 100px;
+    font-size: 100px; @include for-tablet-portrait-up {
+      top: 120px;
+    left: 180px;
+    }
 
   }
 }
@@ -93,4 +124,7 @@
   font-weight: bold;
   margin: 30px auto;
   color: #2D2D2D;
+  @include for-tablet-portrait-up {
+    font-size: 28px;
+  }
 }

@@ -32,16 +32,18 @@ const Popular = () => {
       </div>
       <div className='section__films--wrapper'>
         <div className='section__films'>
-          {firstItems?.map((item) => (
-            <Item key={item.id} item={item}></Item>
-          ))}
+          <div className='section__films-container'>
+            {firstItems?.map((item) => (
+              <Item key={item.id} item={item}></Item>
+            ))}
+          </div>
+          {theAreMore && (
+            <button onClick={() => showMoreItems()} className='btn section__show-more'>
+              <FormattedMessage id='more_button' />
+            </button>
+          )}
         </div>
       </div>
-      {theAreMore && (
-        <button onClick={() => showMoreItems()} className='btn section__show-more'>
-          <FormattedMessage id='more_button' />
-        </button>
-      )}
     </div>
   );
 };

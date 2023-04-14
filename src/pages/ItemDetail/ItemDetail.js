@@ -30,7 +30,7 @@ const ItemDetail = () => {
         <div className='item-detail__info'>
           <h3 className='item-detail__title'>
             {itemData?.title || itemData?.name}
-            <span>{formatYear(itemData?.release_date || itemData?.first_air_date)}</span>
+            <span> {formatYear(itemData?.release_date || itemData?.first_air_date)}</span>
           </h3>
           <p className='item-detail__data'>
             <span>{formatDateWithBarrs(itemData?.release_date || itemData?.first_air_date)}</span>

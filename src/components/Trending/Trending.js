@@ -28,16 +28,18 @@ const Trending = () => {
       </div>
       <div className='section__films--wrapper'>
         <div className='section__films'>
-          {firstMovies?.map((item) => (
-            <Item key={item.id} item={item}></Item>
-          ))}
+          <div className='section__films-container'>
+            {firstMovies?.map((item) => (
+              <Item key={item.id} item={item}></Item>
+            ))}
+          </div>
+          {theAreMore && (
+            <button onClick={() => showMoreMovies()} className='btn section__show-more'>
+              <FormattedMessage id='more_button' />
+            </button>
+          )}
         </div>
       </div>
-      {theAreMore && (
-        <button onClick={() => showMoreMovies()} className='btn section__show-more'>
-          <FormattedMessage id='more_button' />
-        </button>
-      )}
     </div>
   );
 };

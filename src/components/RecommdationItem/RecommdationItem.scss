@@ -1,11 +1,15 @@
+@import "./media-queries.scss";
 .recommendation-item a{
     text-decoration: none;
     outline: none;
     color: #2D2D2D;
     width: 100%;
+  
     &__img{
         width: 287px;
         border-radius: 10px;
+        max-width: 300px;
+
     }
     &__data{
         display: flex;

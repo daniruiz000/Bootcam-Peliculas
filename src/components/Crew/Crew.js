@@ -8,10 +8,12 @@ const Crew = ({ personsData }) => {
   const crewFilter = crew?.filter((person) => importantJobs.includes(person.job));
   console.log(crew, crewFilter);
   return (
-    <div className='item-detail__crew-container'>
-      {crewFilter?.map((person) => (
-        <CrewDetail key={person.id} person={person} />
-      ))}
+    <div className='item-detail__cast-wrap'>
+      <div className='item-detail__crew-container'>
+        {crewFilter?.map((person) => (
+          <CrewDetail key={person.id} person={person} />
+        ))}
+      </div>
     </div>
   );
 };

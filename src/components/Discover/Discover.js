@@ -21,13 +21,13 @@ const Discover = () => {
           {firstItems?.map((item) => (
             <DiscoveredItem key={item.id} item={item} />
           ))}
+          {theAreMore && (
+            <button onClick={() => showMoreItems()} className='discover__btn-show-more'>
+              <FormattedMessage id='more_button' />
+            </button>
+          )}
         </div>
       </div>
-      {theAreMore && (
-        <button onClick={() => showMoreItems()} className='discover__btn-show-more'>
-          <FormattedMessage id='more_button' />
-        </button>
-      )}
     </div>
   );
 };
