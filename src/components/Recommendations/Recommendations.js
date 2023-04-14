@@ -10,7 +10,9 @@ const Recommendations = () => {
   const { id } = useParams(':id');
   const { type } = useParams(':type');
   const { language } = React.useContext(LanguageSelector);
+
   const API_URL_RECOMMENDATIONS = process.env.REACT_APP_API_URL + '/' + type + '/' + id + '/recommendations' + '?language=' + language + '&api_key=' + process.env.REACT_APP_API_KEY;
+
   const [recommendationsData] = useFetch(API_URL_RECOMMENDATIONS);
   const [firstItemsRecommendations, showMoreItemsRecommendations, theAreMoreRecommendations] = usePagination(recommendationsData?.results);
 

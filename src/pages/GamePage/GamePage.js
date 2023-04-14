@@ -67,12 +67,14 @@ const GamePage = () => {
       <div className='game-page__detail'>
         {!gameIsSolved && <ImFilm className='game-page__icon' />}
         <img className={!gameIsSolved ? 'game-page__img--hide' : 'game-page__img'} src={`${process.env.REACT_APP_IMG}${currentFilm?.poster_path}`} />
-        <p>{gameIsSolved ? currentFilm?.title : '???'}</p>
-        <p>
-          <span>{formatDateWithBarrs(currentFilm?.release_date)}</span> <span>{getProductionCountriesName(currentFilm?.production_countries)}</span> | <span>{formatGenres(currentFilm?.genres)}</span> | <span>{formatTime(currentFilm?.runtime)}</span>
-        </p>
-        <p>{!gameIsSolved && <FormattedMessage id='sinopsis' />}</p>
-        <p>{!gameIsSolved && currentFilm?.overview}</p>
+        <div className='game-page__data'>
+          <p className='game-page__title'>{gameIsSolved ? currentFilm?.title : '???'}</p>
+          <p className='game-page__subtitle'>
+            <span>{formatDateWithBarrs(currentFilm?.release_date)}</span> <span>{getProductionCountriesName(currentFilm?.production_countries)}</span> | <span>{formatGenres(currentFilm?.genres)}</span> | <span>{formatTime(currentFilm?.runtime)}</span>
+          </p>
+          <p className='game-page__sinopsis-title'>{!gameIsSolved && <FormattedMessage id='sinopsis' />}</p>
+          <p className='game-page__sinopsis'>{!gameIsSolved && currentFilm?.overview}</p>
+        </div>
       </div>
       <div>
         <h3>
