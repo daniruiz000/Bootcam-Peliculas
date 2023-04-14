@@ -1,5 +1,5 @@
-@import "./media-queries.scss";
-.recommendation-item a{
+@import "../../styles/media-queries.scss";
+.recommendation-item {
     text-decoration: none;
     outline: none;
     color: #2D2D2D;
@@ -26,5 +26,19 @@
         font-size: 16px;
         font-weight: 200;
         color: #2D2D2D;
+    }
+    &__not-img{
+        width: 284px;
+        height: 160px;
+        border-radius: 10px;
+        background-color: rgb(161, 161, 161);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+    }
+    &__not-img-text{
+        font-size: 80px;
+        font-weight: bold;
     }
 }

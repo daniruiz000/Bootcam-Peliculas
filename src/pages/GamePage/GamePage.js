@@ -99,7 +99,13 @@ const GamePage = () => {
         >
           <FormattedMessage id='restart' />
         </button>
-        <button className='btn game-page__solve-btn' disabled={gameIsSolved} onClick={() => setGameIsSolved(true)}>
+        <button
+          className='btn game-page__solve-btn'
+          disabled={gameIsSolved}
+          onClick={() => {
+            setGameIsSolved(true);
+          }}
+        >
           <FormattedMessage id='solve' />
         </button>
       </div>

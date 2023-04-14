@@ -25,7 +25,6 @@
     top: -3px;
     @include for-tablet-portrait-up {
       flex-flow: row nowrap;
-      align-items: flex-start;
       padding: 30px 0;
     }
   }
