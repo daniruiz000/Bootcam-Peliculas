@@ -46,10 +46,10 @@
   
   &__films {
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
-
     @include for-tablet-portrait-up {
       display: flex;
       flex-direction: row;
