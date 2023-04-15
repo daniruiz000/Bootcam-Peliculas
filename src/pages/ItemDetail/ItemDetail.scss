@@ -29,6 +29,7 @@
     }
     &__info{
         padding: 0 20px;
+        margin-bottom: 20px;
         @include for-tablet-portrait-up {
             width: 55%;
             margin: 0 20px;
