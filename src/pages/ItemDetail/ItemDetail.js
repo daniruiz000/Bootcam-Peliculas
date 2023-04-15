@@ -22,6 +22,7 @@ const ItemDetail = () => {
 
   const API_URL_CAST = process.env.REACT_APP_API_URL + '/' + type + '/' + id + '/credits' + '?language=' + language + '&api_key=' + process.env.REACT_APP_API_KEY;
   const [personsData] = useFetch(API_URL_CAST);
+
   return (
     <div className='item-detail'>
       <div className='item-detail__header'>

@@ -11,6 +11,7 @@ const Discover = () => {
   const API_URL = process.env.REACT_APP_API_URL + '/discover/movie?page=1&language=' + language + '&release_date.desc&vote_average.gte=6.5&api_key=' + process.env.REACT_APP_API_KEY;
   const [discoverData] = useFetch(API_URL);
   const [firstItems, showMoreItems, theAreMore] = usePagination(discoverData?.results);
+
   return (
     <div className='discover'>
       <h3 className='discover__title'>

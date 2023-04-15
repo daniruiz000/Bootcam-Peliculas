@@ -19,7 +19,6 @@
       flex-direction: row;
     }
   }
-
   &__links-link {
     padding-right: 10px;
     text-decoration: none;
@@ -33,12 +32,9 @@
   }
   &__lang {
     padding: 5px;
-    margin-left: 10px;
+    margin: 0 20px;
     display: flex;
- 
-
   }
-
   &__lang-btn {
     background: none;
     color: #ffff;
@@ -95,7 +91,6 @@
     font-weight: 700;
     font-size: 32px;
     color: #ffff;
-
     @include for-tablet-portrait-up {
       left: 37px;
       top: 100px;
@@ -111,7 +106,6 @@
     font-size: 20px;
     padding-right: 10px;
     color: #ffff;
-
     @include for-tablet-portrait-up {
       left: 37px;
       top: 170px;
