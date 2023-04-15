@@ -8,6 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import Cast from '../../components/Cast/Cast';
 import Crew from '../../components/Crew/Crew';
 import Recommendations from '../../components/Recommendations/Recommendations';
+import Score from '../../components/Score/Score';
 
 const ItemDetail = () => {
   const { id } = useParams(':id');
@@ -36,16 +37,10 @@ const ItemDetail = () => {
             <span>{formatDateWithBarrs(itemData?.release_date || itemData?.first_air_date)}</span>
             <span>{getProductionCountriesName(itemData?.production_countries)}</span> | {formatGenres(itemData?.genres)} | <span>{formatTime(itemData?.runtime || itemData?.episode_run_time)}</span>
           </p>
+
           <div className='item-detail__score-container'>
             <div className='item-detail__score'>
-              <div className='item-detail__exterior-circle'>
-                <div className='item-detail__interior-circle' style={{ border: `3px solid ${colorVote}` }}>
-                  <p className='item-detail__vote'>
-                    {porcentVote}
-                    <span className='item-detail__span'>%</span>
-                  </p>
-                </div>
-              </div>
+              <Score colorVote={colorVote} porcentVote={porcentVote} />
             </div>
             <p className='item-detail__score-text'>
               <FormattedMessage id='score' />
