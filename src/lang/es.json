@@ -23,5 +23,7 @@
     "general-view":"Vista general",
     "principal-cast":"Reparto Principal",
     "recommendations":"Recomendaciones",
-    "recommendations-not":"No hay recomendaciones para esta película"
+    "recommendations-not":"No hay recomendaciones para esta película",
+    "correct":"¡Bien hecho, Acertaste!",
+    "incorrect":"¡Ohh, Vuelve a intentarlo!"
   }

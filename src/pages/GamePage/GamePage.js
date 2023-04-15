@@ -78,7 +78,6 @@ const GamePage = () => {
       </div>
       <div>
         <h3>
-          {' '}
           <FormattedMessage id='options' />
         </h3>
         <div className='game-page__options'>

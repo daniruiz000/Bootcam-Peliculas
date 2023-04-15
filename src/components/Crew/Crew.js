@@ -6,7 +6,7 @@ const Crew = ({ personsData }) => {
   const importantJobs = ['Editor', 'Executive Producer', 'Writer', 'Sound', 'Costume & Make-Up', 'Director', 'Screenplay', 'Story', 'Novel', 'Characters'];
   const crew = personsData?.crew?.map((element) => element);
   const crewFilter = crew?.filter((person) => importantJobs.includes(person.job));
-  console.log(crew, crewFilter);
+
   return (
     <div className='item-detail__cast-wrap'>
       <div className='item-detail__crew-container'>
