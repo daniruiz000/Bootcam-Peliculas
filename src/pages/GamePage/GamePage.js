@@ -91,7 +91,7 @@ const GamePage = () => {
         </div>
       </div>
       <div>
-        <h3>
+        <h3 className='game-page__options-title'>
           <FormattedMessage id='options' />
         </h3>
         <div className='game-page__options'>

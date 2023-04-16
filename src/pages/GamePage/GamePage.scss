@@ -1,4 +1,5 @@
 @import "../../styles/media-queries.scss";
+
 .game-page {
   display: flex;
   flex-flow: column nowrap;
@@ -12,7 +13,6 @@
     position: relative;
     z-index: 10;
   }
-
   &__detail {
     display: flex;
     flex-flow: column nowrap;
@@ -81,23 +81,28 @@
       justify-content: space-between;
     }
   }
-
+  &__options-title{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 30px auto;
+    color: #2D2D2D;
+    @include for-tablet-portrait-up {
+      font-size: 28px;
+    }
+  }
   &__button {
     margin-bottom: 20px;
     text-transform: capitalize;
   }
-
   &__solve {
     display: flex;
     justify-content: center;
     margin-bottom: 60px;
   }
-
   &__solve-btn {
     margin: 0 10px;
   }
   &__img{
- 
     width: 265px;
     margin: 20px auto;
     border-radius: 10px;
@@ -115,15 +120,5 @@
       top: -8px;
       left: 180px;
     }
-
-  }
-}
-.game-page h3{
-  font-size: 24px;
-  font-weight: bold;
-  margin: 30px auto;
-  color: #2D2D2D;
-  @include for-tablet-portrait-up {
-    font-size: 28px;
   }
 }
