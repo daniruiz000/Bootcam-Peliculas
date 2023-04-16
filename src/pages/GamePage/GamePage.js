@@ -22,14 +22,28 @@ const GamePage = () => {
       .then((dataParsed) => {
         const currentList = dataParsed?.results;
         const randomIndexes = generateRandomIndex(currentList);
-        const currentFilmIndex = randomIndexes[generateRandom(0, 3)];
-        const currentFilmId = currentList[currentFilmIndex]?.id;
+        let currentFilmIndex = randomIndexes[generateRandom(0, 3)];
+        let currentFilmId = currentList[currentFilmIndex]?.id;
 
-        const API_URL_DETAIL = process.env.REACT_APP_API_URL + '/movie/' + currentFilmId + '?language=' + language + '&api_key=' + process.env.REACT_APP_API_KEY;
+        let API_URL_DETAIL = process.env.REACT_APP_API_URL + '/movie/' + currentFilmId + '?language=' + language + '&api_key=' + process.env.REACT_APP_API_KEY;
+
         fetch(API_URL_DETAIL)
           .then((response) => response.json())
           .then((dataParsed) => {
-            setCurrentFilm(dataParsed);
+            if (!dataParsed.title || !dataParsed.overview || !dataParsed.poster_path) {
+              currentFilmIndex = randomIndexes[generateRandom(0, 3)];
+              currentFilmId = currentList[currentFilmIndex]?.id;
+
+              API_URL_DETAIL = process.env.REACT_APP_API_URL + '/movie/' + currentFilmId + '?language=' + language + '&api_key=' + process.env.REACT_APP_API_KEY;
+
+              fetch(API_URL_DETAIL)
+                .then((response) => response.json())
+                .then((newDataParsed) => {
+                  setCurrentFilm(newDataParsed);
+                });
+            } else {
+              setCurrentFilm(dataParsed);
+            }
           });
         generateNewGamePlay(currentList, randomIndexes);
       });
@@ -82,7 +96,7 @@ const GamePage = () => {
         </h3>
         <div className='game-page__options'>
           {options.map((name) => (
-            <button onClick={() => selectOption(name)} key={name} className={'btn btn--big btn--option game-page__button ' + getClassesForButton(name)}>
+            <button onClick={() => selectOption(name)} key={name} className={'btn btn--option game-page__button ' + getClassesForButton(name)}>
               {name}
             </button>
           ))}
