@@ -8,15 +8,15 @@ export const roundedToFixed = (float = 0, divider = 1, digits = 1) => {
 export const generateColor = (value) => {
   let color;
   if (value < 50) {
-    color = 'rgb(240, 175, 175)';
+    color = 'red';
   } else if (value >= 50 && value < 70) {
-    color = '#F4F954';
+    color = 'orange';
   } else if (value >= 70 && value < 80) {
-    color = 'rgb(163, 227, 163)';
+    color = 'green';
   } else if (value >= 80) {
-    color = '#6EFAD7';
+    color = 'blue';
   } else {
-    color = 'default';
+    color = '';
   }
   return color;
 };
